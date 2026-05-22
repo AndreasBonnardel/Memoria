@@ -1107,8 +1107,8 @@ public partial class BattleHUD : UIScene
     private void DisplayCharacterParameter(UI.PanelParty.Character playerHud, BattleUnit bd, DamageAnimationInfo hp, DamageAnimationInfo mp)
     {
         playerHud.Name.Label.SetText(bd.NameTag);
-        playerHud.HP.SetText(String.IsNullOrEmpty(bd.UILabelHP) ? hp.CurrentValue.ToString() : bd.UILabelHP);
-        playerHud.MP.SetText(String.IsNullOrEmpty(bd.UILabelMP) ? mp.CurrentValue.ToString() : bd.UILabelMP);
+        playerHud.HP.SetText(String.IsNullOrEmpty(bd.UILabelHP) ? hp.CurrentValue.ToString() + "/" + bd.MaximumHp.ToString() : bd.UILabelHP);
+        playerHud.MP.SetText(String.IsNullOrEmpty(bd.UILabelMP) ? mp.CurrentValue.ToString() + "/" + bd.MaximumMp.ToString() : bd.UILabelMP);
         ParameterStatus parameterStatus = CheckHPState(bd);
 
         switch (parameterStatus)
