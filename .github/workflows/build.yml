@@ -15,11 +15,9 @@ jobs:
       uses: actions/checkout@v4
 
     - name: Decrypt and extract dependencies
-      env:
-        ARCHIVE_PASSWORD: ${{ secrets.DEPENDENCIES_PASSWORD }}
       shell: pwsh
       run: |
-        7z x .\References\Dependencies.7z -p"$($env:ARCHIVE_PASSWORD)" -oReferences -y
+        7z x .\References\Dependencies.7z -oReferences -y
 
     - name: Setup MSBuild path
       uses: microsoft/setup-msbuild@v2
