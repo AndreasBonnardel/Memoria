@@ -66,6 +66,13 @@ jobs:
       with:
         name: Memoria-Patcher-Osx-x64
         path: Output/osx-x64/Memoria.Patcher
+
+    - name: Upload Assembly-CSharp
+      uses: actions/upload-artifact@v4
+      with:
+        name: Assembly-CSharp
+        path: Output/Assembly-CSharp.dll
+        
     - name: Rename output files
       run: |
         mv "Output/linux-x64/Memoria.Patcher" "Output/linux-x64/Memoria.Patcher-linux-x64"
